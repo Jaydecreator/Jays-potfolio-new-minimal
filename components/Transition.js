@@ -1,7 +1,54 @@
+//framer motion
+import {motion} from 'framer-motion';
+
+//variants
+const transitionVariants = {
+  initial: {
+    x: '100%',
+    width: '100%',
+  },
+  animate: {
+    x: '0%',
+    width: '0%',
+  },
+  exit: {
+    x: ['0%', '100%'],
+    width: ['0%', '100%'],
+  },
+};
+
 const Transition = () => {
   return (
     <>
-      <div>Transition</div>
+      <motion.div 
+        className='fixed top-0 bottom-0 right-full w-screen h-screen z-30 bg-[#441c57]' 
+        variants={transitionVariants} 
+        initial='initial' 
+        animate='animate'
+        exit='exit'
+        transition={{delay: 0.2, duration: 0.6, ease: 'easeInOut' }}
+      >
+      </motion.div>
+      
+      <motion.div 
+        className='fixed top-0 bottom-0 right-full w-screen h-screen z-20 bg-[#572245]' 
+        variants={transitionVariants} 
+        initial='initial' 
+        animate='animate'
+        exit='exit'
+        transition={{delay: 0.35, duration: 0.6, ease: 'easeInOut' }}
+      >
+      </motion.div>
+      
+      <motion.div 
+        className='fixed top-0 bottom-0 right-full w-screen h-screen z-10 bg-[#1b6577]' 
+        variants={transitionVariants} 
+        initial='initial' 
+        animate='animate'
+        exit='exit'
+        transition={{delay: 0.55, duration: 0.6, ease: 'anticipate' }}
+      >
+      </motion.div>
     </>
   );
 };
